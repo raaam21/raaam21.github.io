@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { profile, impact, experience, projects, skills, logos, achievements, education } from './data'
 
 const ext = { target: '_blank', rel: 'noopener' }
-const sections = ['about', 'github', 'impact', 'experience', 'projects', 'skills', 'education']
+const sections = ['about', 'github', 'impact', 'skills', 'experience', 'projects', 'education']
 
 const Rich = ({ text }) => text.split('**').map((s, i) => (i % 2 ? <b key={i}>{s}</b> : s))
 
@@ -196,6 +196,25 @@ export default function App() {
           )}
         </Reveal>
 
+        <Reveal id="skills" title="skills">
+          <dl className="skills">
+            {skills.map(s => [
+              <dt key={s.group}>{s.group}</dt>,
+              <dd key={s.group + '-d'} className="skill-list">
+                {s.items.map(i => (
+                  <span key={i}>
+                    {logos[i] && <img src={'https://cdn.simpleicons.org/' + logos[i]} alt="" width="16" height="16" loading="lazy" />}
+                    {i}
+                  </span>
+                ))}
+              </dd>,
+            ])}
+          </dl>
+          <div className="card">
+            <List items={achievements} className="flush" />
+          </div>
+        </Reveal>
+
         <Reveal id="experience" title="experience">
           {experience.map((job, i) => (
             <details key={job.company} open={i === 0}>
@@ -218,25 +237,6 @@ export default function App() {
               <Tags tags={p.tags} />
             </div>
           ))}
-        </Reveal>
-
-        <Reveal id="skills" title="skills">
-          <dl className="skills">
-            {skills.map(s => [
-              <dt key={s.group}>{s.group}</dt>,
-              <dd key={s.group + '-d'} className="skill-list">
-                {s.items.map(i => (
-                  <span key={i}>
-                    {logos[i] && <img src={'https://cdn.simpleicons.org/' + logos[i]} alt="" width="16" height="16" loading="lazy" />}
-                    {i}
-                  </span>
-                ))}
-              </dd>,
-            ])}
-          </dl>
-          <div className="card">
-            <List items={achievements} className="flush" />
-          </div>
         </Reveal>
 
         <Reveal id="education" title="education">
