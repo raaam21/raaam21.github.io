@@ -172,6 +172,7 @@ export default function App() {
           <h1>{profile.name}</h1>
           <Typed text={profile.tagline} />
           <p className="dim">{profile.about}</p>
+          <List items={profile.aboutPoints} />
           <div className="links">
             <a href={'mailto:' + profile.email}>email</a>
             <Socials />

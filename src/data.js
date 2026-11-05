@@ -1,9 +1,14 @@
 
 export const profile = {
   name: 'Bramharishi Shukla',
-  tagline: 'Software Development Engineer · Python / Django / PostgreSQL / GCP',
+  tagline: 'Full-Stack Software Engineer · React / TypeScript · Python / Django / PostgreSQL',
   about:
-    'Backend engineer at AdNabu since Sep 2024. I build and fix Shopify apps used by thousands of merchants: finding root causes of production bugs, making slow queries fast, and running releases and on-call. 250 PRs merged, 795 reviewed.',
+    'Full-stack engineer at AdNabu since Sep 2024, building and fixing Shopify apps used by thousands of merchants. 250 PRs merged, 795 reviewed.',
+  aboutPoints: [
+    '**Backend:** Python, Django, Celery and PostgreSQL services. Root-caused production incidents, rebuilt Redirect Manager analytics for 68K+ redirect stores (60s+ timeouts → instant) and shipped LLM features with prompt-injection guards.',
+    '**Frontend:** React and TypeScript UIs across 6 apps (120 merged PRs). I own our Core Web Vitals work, cutting CLS from 0.07 to 0.04 on 3 apps, plus cross-browser fixes that kept the Built for Shopify badge.',
+    '**Reliability & databases:** cut webhook DB requests by 98% (61K → 1.5K/hr), stabilized workers on a 300M-row table, took two recurring Sentry errors to zero, and ran 7 releases and on-call shifts.',
+  ],
   email: 'bramharishi21@gmail.com',
   resume: 'resume.pdf',
   github: ['bramharishi', 'raaam21'],
