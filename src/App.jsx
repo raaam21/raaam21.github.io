@@ -76,7 +76,7 @@ function Terminal({ toggleTheme }) {
     contact: () => [`email: ${profile.email}`, ...profile.links.map(l => `${l.label}: ${l.url.replace('https://', '')}`)].join('\n'),
     resume: () => { window.open(profile.resume); return `opening ${profile.resume}…` },
     theme: () => `theme: ${toggleTheme()}`,
-    sudo: () => 'nice try 🙂',
+    sudo: () => 'nice try! 🙂',
     ...Object.fromEntries(sections.slice(1).map(s => [s, () => go(s)])),
   }
 
